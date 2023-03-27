@@ -14,6 +14,16 @@ class BasePage:
     #     time.sleep(3)
     #     return self.driver.find_element(By.CSS_SELECTOR, locator)
 
+
+    def back(self):
+        self.driver.back()
+
+    def forvard(self):
+        self.driver.forvard()
+
+    def refresh(self):
+        self.driver.refresh()
+
     def get_url(self):
         return self.driver.current_url
 
@@ -21,3 +31,6 @@ class BasePage:
         if self.get_url() == self.base_url:
             return True
         return False
+
+    def get_title(self):
+        return self.driver.title

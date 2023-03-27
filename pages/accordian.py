@@ -1,5 +1,4 @@
 from pages.base_page import BasePage
-from selenium.common.exceptions import NoSuchElementException
 from components.components import WebElement
 
 
@@ -7,6 +6,10 @@ class Accordian(BasePage):
     def __init__(self, driver):
         self.base_url = 'https://demoqa.com/accordian'
         super().__init__(driver, self.base_url)
+
+        self.pageData = {
+            "title": "DEMOQA"
+        }
         self.text_elements = WebElement(driver, '#section1Content > p')
         self.btn_elements = WebElement(driver, '#section1Heading')
 
