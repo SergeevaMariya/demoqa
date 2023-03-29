@@ -18,3 +18,6 @@ class FormPage(BasePage):
         self.radio_btn_female = WebElement(driver, '#genterWrapper > div.col-md-9.col-sm-12 > div:nth-child(2) > label')
         self.radio_btn_other = WebElement(driver, '#genterWrapper > div.col-md-9.col-sm-12 > div:nth-child(3) > label')
         self.mobile_numder = WebElement(driver, '#userNumber')
+        self.btn_submit = WebElement(driver, '#submit')
+        self.modal_dialog = WebElement(driver, 'body > div.fade.modal.show > div')
+        self.btn_close_modal = WebElement(driver, '#closeLargeModal')

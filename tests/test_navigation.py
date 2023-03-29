@@ -1,6 +1,7 @@
 from pages.demoqa import Demoqa
 from pages.elements_page import ElementsPage
 
+
 def test_navigation(browser):
     demo_page = Demoqa(browser)
 
