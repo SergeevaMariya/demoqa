@@ -9,6 +9,7 @@ def test_send_keys(browser):
     time.sleep(2)
     send_keys.first_name.send_keys('Mari')
     send_keys.last_name.send_keys('Sergeeva')
+    send_keys.email.send_keys('mozhno_est@mail.ru')
     send_keys.radio_btn_male.click_force()
     send_keys.mobile_numder.send_keys('89112703562')
     send_keys.btn_submit.click_force()
