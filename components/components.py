@@ -1,3 +1,4 @@
+import logging
 import time
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
@@ -49,7 +50,7 @@ class WebElement:
         self.driver.execute_script("arguments[0].click();", self.find_element())
 
     def clear(self):
-        self.find_element().send_keys(Keys.CONTROL + 'a')
+        self.find_element().send_keys(Keys.COMMAND + 'a')
         self.find_element().send_keys(Keys.DELETE)
 
     def get_dom_atribute(self, name: str):
@@ -78,4 +79,12 @@ class WebElement:
             print("locator type " + self.locator_type + " not correct")
             return False
 
+    def check_css_new(self, style, value=''):
+        return self.find_element().value_of_css_property(style) == value
 
+        # try:
+        #     self.driver.execute_script(f"arguments[0].style.{style} = '{value}';", self.find_element())
+        # except Exception as ex:
+        #     logging.log(1, ex)
+        #     return False
+        # return True
